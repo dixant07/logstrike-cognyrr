@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Play } from "lucide-react";
-import { LogstrikeEvaluationVideo } from "@/assets";
+import VideoCarousel from "./VideoCarousel";
 
 const Hero = () => {
   return (
@@ -54,17 +54,7 @@ const Hero = () => {
           
           {/* Right content - Hero image */}
           <div className="relative">
-            <div className="relative overflow-hidden rounded-2xl shadow-hero">
-              <video 
-                src={LogstrikeEvaluationVideo}
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full h-auto object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
-            </div>
+            <VideoCarousel />
             
             {/* Floating elements */}
             <div className="absolute -top-4 -right-4 p-4 bg-background rounded-xl shadow-elevated border border-border">

@@ -31,6 +31,8 @@ export const Favicon = '/favicon.ico';
 
 // Video assets
 export const LogstrikeEvaluationVideo = "/src/assets/Logstrike evaluation board V3.mp4";
+export const RestaurantVideo = "/src/assets/restaurent.mp4";
+export const SupermarketVideo = "/src/assets/supermarket.mp4";
 
 // Icons (if added later)
 // export { default as EyeIcon } from './icons/eye.svg';
