@@ -1,15 +1,15 @@
 import { Button } from "@/components/ui/button";
-import { Eye } from "lucide-react";
+import { LogstrikeLogo } from "@/assets";
 
 const Header = () => {
   return (
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-6 h-16 flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <div className="p-2 bg-gradient-primary rounded-lg">
-            <Eye className="h-6 w-6 text-primary-foreground" />
+          <div className="p-1 bg-black rounded-lg">
+            <img src={LogstrikeLogo} alt="Logstrike" className="h-8 w-8" />
           </div>
-          <span className="text-xl font-bold text-foreground">VisionAI</span>
+          <span className="text-xl font-bold text-foreground">Logstrike</span>
         </div>
         
         <nav className="hidden md:flex items-center space-x-8">

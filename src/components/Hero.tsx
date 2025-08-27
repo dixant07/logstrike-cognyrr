@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Play } from "lucide-react";
-import heroImage from "@/assets/hero-ai-vision.jpg";
+import { LogstrikeEvaluationVideo } from "@/assets";
 
 const Hero = () => {
   return (
@@ -55,9 +55,12 @@ const Hero = () => {
           {/* Right content - Hero image */}
           <div className="relative">
             <div className="relative overflow-hidden rounded-2xl shadow-hero">
-              <img 
-                src={heroImage} 
-                alt="AI Vision Technology in action"
+              <video 
+                src={LogstrikeEvaluationVideo}
+                autoPlay
+                muted
+                loop
+                playsInline
                 className="w-full h-auto object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />

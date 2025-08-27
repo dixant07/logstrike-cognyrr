@@ -87,7 +87,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <div className="font-medium text-foreground">Email</div>
-                      <div className="text-muted-foreground">contact@visionai.com</div>
+                      <div className="text-muted-foreground">contact@logstrike.com</div>
                     </div>
                   </div>
                   
@@ -120,7 +120,7 @@ const Contact = () => {
             <Card className="shadow-card border-border bg-gradient-subtle">
               <CardContent className="p-6">
                 <h3 className="text-lg font-semibold text-foreground mb-4">
-                  Why Choose VisionAI?
+                  Why Choose Logstrike?
                 </h3>
                 
                 <div className="space-y-3">

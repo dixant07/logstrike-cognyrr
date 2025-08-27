@@ -1,4 +1,5 @@
-import { Eye, Linkedin, Twitter, Mail } from "lucide-react";
+import { Linkedin, Twitter, Mail } from "lucide-react";
+import { LogstrikeLogo } from "@/assets";
 
 const Footer = () => {
   return (
@@ -8,10 +9,10 @@ const Footer = () => {
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="p-2 bg-gradient-primary rounded-lg">
-                <Eye className="h-6 w-6 text-primary-foreground" />
+              <div className="p-1 bg-black rounded-lg">
+                <img src={LogstrikeLogo} alt="Logstrike" className="h-8 w-8" />
               </div>
-              <span className="text-xl font-bold">VisionAI</span>
+              <span className="text-xl font-bold">Logstrike</span>
             </div>
             <p className="text-secondary-foreground/80 mb-6 max-w-md">
               Leading provider of AI vision solutions for retail and industrial applications. 
@@ -55,7 +56,7 @@ const Footer = () => {
 
         <div className="border-t border-secondary-foreground/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-secondary-foreground/60 text-sm">
-            © 2024 VisionAI. All rights reserved.
+            © 2024 Logstrike. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-secondary-foreground/60 hover:text-secondary-foreground text-sm transition-colors">
