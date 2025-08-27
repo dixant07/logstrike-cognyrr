@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Play, Image as ImageIcon } from "lucide-react";
+import { IndustrialSafetyVideo, PersonCountImage, RetailAnalyticsImage, SecuritySurveillanceImage, PharmaTabletDefectsVideo, InventoryImage, SupermarketVideo } from "@/assets";
 
 const Applications = () => {
   // Placeholder applications - ready for your videos and images
@@ -9,7 +10,7 @@ const Applications = () => {
     {
       title: "Retail Customer Analytics",
       description: "Real-time customer behavior tracking and heatmap generation in retail environments.",
-      type: "video",
+      type: "image",
       category: "Retail",
       placeholder: "Your retail demo video will be showcased here"
     },
@@ -44,7 +45,7 @@ const Applications = () => {
     {
       title: "People Counting",
       description: "Accurate foot traffic analysis and occupancy monitoring.",
-      type: "image",
+      type: "video",
       category: "Analytics",
       placeholder: "Your people counting solution images will be displayed here"
     }
@@ -70,21 +71,82 @@ const Applications = () => {
           {applications.map((app, index) => (
             <Card key={index} className="overflow-hidden border-border shadow-card hover:shadow-elevated transition-all duration-300 group">
               {/* Media placeholder */}
-              <div className="relative aspect-video bg-muted border-b border-border flex items-center justify-center">
-                <div className="text-center space-y-4">
-                  {app.type === "video" ? (
-                    <div className="p-4 bg-primary/10 rounded-full">
-                      <Play className="h-8 w-8 text-primary" />
-                    </div>
-                  ) : (
-                    <div className="p-4 bg-primary/10 rounded-full">
-                      <ImageIcon className="h-8 w-8 text-primary" />
-                    </div>
-                  )}
-                  <p className="text-sm text-muted-foreground px-4">
-                    {app.placeholder}
-                  </p>
-                </div>
+              <div className="relative aspect-video bg-muted border-b border-border flex items-center justify-center overflow-hidden">
+                {app.title === "Safety Compliance" ? (
+                  <video 
+                    className="w-full h-full object-cover"
+                    muted
+                    loop
+                    autoPlay
+                    playsInline
+                  >
+                    <source src={IndustrialSafetyVideo} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                ) : app.title === "Industrial Quality Control" ? (
+                  <video 
+                    className="w-full h-full object-cover"
+                    muted
+                    loop
+                    autoPlay
+                    playsInline
+                  >
+                    <source src={PharmaTabletDefectsVideo} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                ) : app.title === "People Counting" ? (
+                  <div className="w-full h-full">
+                    <video 
+                      className="w-full h-full object-cover"
+                      muted
+                      loop
+                      autoPlay
+                      playsInline
+                    >
+                      <source src={SupermarketVideo} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                ) : app.title === "Retail Customer Analytics" ? (
+                  <div className="w-full h-full">
+                    <img 
+                      src={RetailAnalyticsImage} 
+                      alt="Retail Customer Analytics" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ) : app.title === "Security Surveillance" ? (
+                  <div className="w-full h-full">
+                    <img 
+                      src={SecuritySurveillanceImage} 
+                      alt="Security Surveillance" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ) : app.title === "Inventory Management" ? (
+                  <div className="w-full h-full">
+                    <img 
+                      src={InventoryImage} 
+                      alt="Inventory Management" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ) : (
+                  <div className="text-center space-y-4">
+                    {app.type === "video" ? (
+                      <div className="p-4 bg-primary/10 rounded-full">
+                        <Play className="h-8 w-8 text-primary" />
+                      </div>
+                    ) : (
+                      <div className="p-4 bg-primary/10 rounded-full">
+                        <ImageIcon className="h-8 w-8 text-primary" />
+                      </div>
+                    )}
+                    <p className="text-sm text-muted-foreground px-4">
+                      {app.placeholder}
+                    </p>
+                  </div>
+                )}
                 
                 {/* Play button overlay for videos */}
                 {app.type === "video" && (

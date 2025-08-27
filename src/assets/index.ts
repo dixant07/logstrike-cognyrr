@@ -33,6 +33,15 @@ export const Favicon = '/favicon.ico';
 export const LogstrikeEvaluationVideo = "/src/assets/Logstrike evaluation board V3.mp4";
 export const RestaurantVideo = "/src/assets/restaurent.mp4";
 export const SupermarketVideo = "/src/assets/supermarket.mp4";
+export const IndustrialSafetyVideo = "/src/assets/industrial_safety.mp4";
+export const PharmaTabletDefectsVideo = "/src/assets/pharma_tablet_defets.mp4";
+
+// Image assets
+export const PersonCountImage = "/src/assets/person count.png";
+export const RetailAnalyticsImage = "/src/assets/retail analytics.png";
+export const SecuritySurveillanceImage = "/src/assets/security_suveillance.png";
+export const InventoryImage = "/src/assets/inventory.png";
+export const AxeleraAILogo = "/src/assets/Axelera-AI-Logo-Horizontal-Black.png";
 
 // Icons (if added later)
 // export { default as EyeIcon } from './icons/eye.svg';

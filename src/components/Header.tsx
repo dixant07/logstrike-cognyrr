@@ -6,8 +6,8 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-6 h-16 flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <div className="p-1 bg-black rounded-lg">
-            <img src={LogstrikeLogo} alt="Logstrike" className="h-8 w-8" />
+          <div className="p-0.1 bg-transparent rounded-lg">
+            <img src={LogstrikeLogo} alt="Logstrike" className="h-12 w-12" />
           </div>
           <span className="text-xl font-bold text-foreground">Logstrike</span>
         </div>

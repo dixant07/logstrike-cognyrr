@@ -45,9 +45,8 @@ const Hero = () => {
             <div className="pt-8 border-t border-border">
               <p className="text-sm text-muted-foreground mb-4">Trusted by industry leaders</p>
               <div className="flex items-center space-x-8 opacity-60">
-                <div className="text-lg font-semibold">RetailCorp</div>
-                <div className="text-lg font-semibold">IndustryMax</div>
-                <div className="text-lg font-semibold">TechFlow</div>
+                <div className="text-lg font-semibold">VertexPlus</div>
+                <div className="text-lg font-semibold">Riptik AI</div>
               </div>
             </div>
           </div>
