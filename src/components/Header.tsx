@@ -28,7 +28,16 @@ const Header = () => {
         </nav>
         
         <div className="flex items-center space-x-4">
-          <Button variant="professional" size="sm">
+          <Button 
+            variant="professional" 
+            size="sm"
+            onClick={() => {
+              const contactSection = document.getElementById('contact');
+              if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+          >
             Request Demo
           </Button>
         </div>

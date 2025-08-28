@@ -189,16 +189,7 @@ const Applications = () => {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <div className="inline-flex items-center gap-4 p-6 bg-background rounded-xl border border-border shadow-card">
-            <div className="text-sm text-muted-foreground">
-              Ready to upload your demo content?
-            </div>
-            <Button variant="professional" size="sm">
-              Contact Us
-            </Button>
-          </div>
-        </div>
+
       </div>
     </section>
   );

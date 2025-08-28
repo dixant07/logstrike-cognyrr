@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ShoppingCart, Factory, Shield, BarChart3, Users, Camera } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Solutions = () => {
   const solutions = [
@@ -98,6 +99,22 @@ const Solutions = () => {
               <div className="text-muted-foreground">Cost Reduction</div>
             </div>
           </div>
+        </div>
+
+        {/* Request Demo Button */}
+        <div className="mt-12 text-center">
+          <Button 
+            size="lg"
+            className="bg-primary text-primary-foreground hover:bg-primary/90"
+            onClick={() => {
+              const contactSection = document.getElementById('contact');
+              if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+          >
+            Request Demo
+          </Button>
         </div>
       </div>
     </section>

@@ -31,7 +31,15 @@ const Hero = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="hero" size="lg" className="text-base">
+              <Button 
+                variant="hero" 
+                size="lg" 
+                className="text-base"
+                onClick={() => {
+                  const contactSection = document.getElementById('contact');
+                  contactSection?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
                 Get Started Today
                 <ArrowRight className="h-5 w-5" />
               </Button>

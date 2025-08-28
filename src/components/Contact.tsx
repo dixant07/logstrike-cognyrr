@@ -4,8 +4,61 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Calendar } from "lucide-react";
+import { useState } from "react";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    company: '',
+    industry: '',
+    message: ''
+  });
+
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const handleChange = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+    setErrors(prev => ({ ...prev, [field]: '' }));
+  };
+
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {};
+    
+    if (!formData.firstName.trim()) newErrors.firstName = 'First name is required';
+    if (!formData.lastName.trim()) newErrors.lastName = 'Last name is required';
+    if (!formData.email.trim()) newErrors.email = 'Email is required';
+    else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Please enter a valid email';
+    if (!formData.company.trim()) newErrors.company = 'Company is required';
+    if (!formData.industry.trim()) newErrors.industry = 'Industry is required';
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = () => {
+    if (validateForm()) {
+      const subject = encodeURIComponent("Enquiry regarding Vision Solution");
+      const body = encodeURIComponent(
+        `Enquiry Details:
+
+First Name: ${formData.firstName}
+Last Name: ${formData.lastName}
+Email: ${formData.email}
+Company: ${formData.company}
+Industry: ${formData.industry}
+Message: ${formData.message || 'N/A'}
+
+---
+Sent via Logstrike website contact form`
+      );
+      
+      const mailtoLink = `mailto:ceo@log-strike.com?subject=${subject}&body=${body}`;
+      window.location.href = mailtoLink;
+    }
+  };
+
   return (
     <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-6">
@@ -34,28 +87,59 @@ const Contact = () => {
             <CardContent className="space-y-6">
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-foreground">First Name</label>
-                  <Input placeholder="John" />
+                  <label className="text-sm font-medium text-foreground">First Name *</label>
+                  <Input 
+                    placeholder="John" 
+                    value={formData.firstName}
+                    onChange={(e) => handleChange('firstName', e.target.value)}
+                    className={errors.firstName ? "border-destructive" : ""}
+                  />
+                  {errors.firstName && <p className="text-xs text-destructive">{errors.firstName}</p>}
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-foreground">Last Name</label>
-                  <Input placeholder="Doe" />
+                  <label className="text-sm font-medium text-foreground">Last Name *</label>
+                  <Input 
+                    placeholder="Doe" 
+                    value={formData.lastName}
+                    onChange={(e) => handleChange('lastName', e.target.value)}
+                    className={errors.lastName ? "border-destructive" : ""}
+                  />
+                  {errors.lastName && <p className="text-xs text-destructive">{errors.lastName}</p>}
                 </div>
               </div>
               
               <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground">Email</label>
-                <Input type="email" placeholder="john@company.com" />
+                <label className="text-sm font-medium text-foreground">Email *</label>
+                <Input 
+                  type="email" 
+                  placeholder="john@company.com" 
+                  value={formData.email}
+                  onChange={(e) => handleChange('email', e.target.value)}
+                  className={errors.email ? "border-destructive" : ""}
+                />
+                {errors.email && <p className="text-xs text-destructive">{errors.email}</p>}
               </div>
               
               <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground">Company</label>
-                <Input placeholder="Your Company" />
+                <label className="text-sm font-medium text-foreground">Company *</label>
+                <Input 
+                  placeholder="Your Company" 
+                  value={formData.company}
+                  onChange={(e) => handleChange('company', e.target.value)}
+                  className={errors.company ? "border-destructive" : ""}
+                />
+                {errors.company && <p className="text-xs text-destructive">{errors.company}</p>}
               </div>
               
               <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground">Industry</label>
-                <Input placeholder="Retail, Manufacturing, etc." />
+                <label className="text-sm font-medium text-foreground">Industry *</label>
+                <Input 
+                  placeholder="Retail, Manufacturing, etc." 
+                  value={formData.industry}
+                  onChange={(e) => handleChange('industry', e.target.value)}
+                  className={errors.industry ? "border-destructive" : ""}
+                />
+                {errors.industry && <p className="text-xs text-destructive">{errors.industry}</p>}
               </div>
               
               <div className="space-y-2">
@@ -63,10 +147,16 @@ const Contact = () => {
                 <Textarea 
                   placeholder="Tell us about your specific needs and requirements..."
                   className="min-h-[120px]"
+                  value={formData.message}
+                  onChange={(e) => handleChange('message', e.target.value)}
                 />
               </div>
               
-              <Button variant="hero" className="w-full">
+              <Button 
+                variant="hero" 
+                className="w-full"
+                onClick={handleSubmit}
+              >
                 Request Demo
               </Button>
             </CardContent>
@@ -87,11 +177,11 @@ const Contact = () => {
                     </div>
                     <div>
                       <div className="font-medium text-foreground">Email</div>
-                      <div className="text-muted-foreground">hello@logstrike.tech</div>
+                      <div className="text-muted-foreground">ceo@log-strike.com</div>
                     </div>
                   </div>
                   
-                  <div className="flex items-center space-x-4">
+                  {/* <div className="flex items-center space-x-4">
                     <div className="p-2 bg-primary/10 rounded-lg">
                       <Phone className="h-5 w-5 text-primary" />
                     </div>
@@ -99,7 +189,7 @@ const Contact = () => {
                       <div className="font-medium text-foreground">Phone</div>
                       <div className="text-muted-foreground">+1 (555) 123-4567</div>
                     </div>
-                  </div>
+                  </div> */}
                   
                   <div className="flex items-center space-x-4">
                     <div className="p-2 bg-primary/10 rounded-lg">
@@ -108,8 +198,8 @@ const Contact = () => {
                     <div>
                       <div className="font-medium text-foreground">Address</div>
                       <div className="text-muted-foreground">
-                        123 Tech Street<br />
-                        San Francisco, CA 94105
+                        Parel, Mumbai<br />
+                        Maharashtra 400012
                       </div>
                     </div>
                   </div>
@@ -153,7 +243,11 @@ const Contact = () => {
                 <p className="text-primary-foreground/80 text-sm mb-4">
                   See our technology in action with a personalized demonstration.
                 </p>
-                <Button variant="secondary" className="w-full">
+                <Button 
+                  variant="secondary" 
+                  className="w-full"
+                  onClick={() => window.open('https://calendly.com/shreychhedareal/30min', '_blank')}
+                >
                   Book a Meeting
                 </Button>
               </CardContent>

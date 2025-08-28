@@ -1,4 +1,5 @@
-import { Linkedin, Twitter, Mail } from "lucide-react";
+import { Linkedin, Mail } from "lucide-react";
+import { Twitter as X } from "lucide-react";
 import LogstrikeLogo from "../assets/Logstrike-Logo-04.svg";
 import AxeleraAILogo from "../assets/Axelera-AI-Logo-Horizontal-Black.png";
 
@@ -20,13 +21,13 @@ const Footer = () => {
               Transform your business with cutting-edge computer vision technology.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="p-2 bg-secondary-foreground/10 rounded-lg hover:bg-secondary-foreground/20 transition-colors">
+              <a href="https://www.linkedin.com/company/logstrike/" target="_blank" rel="noopener noreferrer" className="p-2 bg-secondary-foreground/10 rounded-lg hover:bg-secondary-foreground/20 transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="p-2 bg-secondary-foreground/10 rounded-lg hover:bg-secondary-foreground/20 transition-colors">
-                <Twitter className="h-5 w-5" />
+              <a href="https://x.com/logstrike_tek" target="_blank" rel="noopener noreferrer" className="p-2 bg-secondary-foreground/10 rounded-lg hover:bg-secondary-foreground/20 transition-colors">
+                <X className="h-5 w-5" />
               </a>
-              <a href="#" className="p-2 bg-secondary-foreground/10 rounded-lg hover:bg-secondary-foreground/20 transition-colors">
+              <a href="mailto:ceo@log-strike.com" className="p-2 bg-secondary-foreground/10 rounded-lg hover:bg-secondary-foreground/20 transition-colors">
                 <Mail className="h-5 w-5" />
               </a>
             </div>
