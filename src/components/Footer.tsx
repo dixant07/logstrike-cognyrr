@@ -1,5 +1,6 @@
 import { Linkedin, Twitter, Mail } from "lucide-react";
-import { LogstrikeLogo, AxeleraAILogo } from "@/assets";
+import LogstrikeLogo from "../assets/Logstrike-Logo-04.svg";
+import AxeleraAILogo from "../assets/Axelera-AI-Logo-Horizontal-Black.png";
 
 const Footer = () => {
   return (

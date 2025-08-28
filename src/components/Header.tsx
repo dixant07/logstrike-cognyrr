@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { LogstrikeLogo } from "@/assets";
+import LogstrikeLogo from "../assets/Logstrike-Logo-04.svg";
 
 const Header = () => {
   return (

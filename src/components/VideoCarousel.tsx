@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { LogstrikeEvaluationVideo, RestaurantVideo, SupermarketVideo } from '@/assets';
+import LogstrikeEvaluationVideo from '../assets/Logstrike evaluation board V3.mp4';
+import RestaurantVideo from '../assets/restaurent.mp4';
+import SupermarketVideo from '../assets/supermarket.mp4';
+
 
 interface VideoCarouselProps {
   className?: string;

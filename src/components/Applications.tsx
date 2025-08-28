@@ -2,7 +2,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Play, Image as ImageIcon } from "lucide-react";
-import { IndustrialSafetyVideo, PersonCountImage, RetailAnalyticsImage, SecuritySurveillanceImage, PharmaTabletDefectsVideo, InventoryImage, SupermarketVideo } from "@/assets";
+import IndustrialSafetyVideo from "../assets/industrial_safety.mp4"
+import PharmaTabletDefectsVideo from "../assets/pharma_tablet_defets.mp4"
+import RetailAnalyticsImage from "../assets/retail analytics.png";
+import SecuritySurveillanceImage from "../assets/security_suveillance.png";
+import SupermarketVideo from "../assets/supermarket.mp4";
+import InventoryImage from "../assets/inventory.png"
 
 const Applications = () => {
   // Placeholder applications - ready for your videos and images
