@@ -30,18 +30,18 @@ export const Favicon = '/favicon.ico';
 // export { default as BackgroundVideo } from './backgrounds/hero-video.mp4';
 
 // Video assets
-export const LogstrikeEvaluationVideo = "/src/assets/Logstrike evaluation board V3.mp4";
-export const RestaurantVideo = "/src/assets/restaurent.mp4";
-export const SupermarketVideo = "/src/assets/supermarket.mp4";
-export const IndustrialSafetyVideo = "/src/assets/industrial_safety.mp4";
-export const PharmaTabletDefectsVideo = "/src/assets/pharma_tablet_defets.mp4";
+export const LogstrikeEvaluationVideo = "./Logstrike evaluation board V3.mp4";
+export const RestaurantVideo = "./restaurent.mp4";
+export const SupermarketVideo = "./supermarket.mp4";
+export const IndustrialSafetyVideo = "./industrial_safety.mp4";
+export const PharmaTabletDefectsVideo = "./pharma_tablet_defets.mp4";
 
 // Image assets
-export const PersonCountImage = "/src/assets/person count.png";
-export const RetailAnalyticsImage = "/src/assets/retail analytics.png";
-export const SecuritySurveillanceImage = "/src/assets/security_suveillance.png";
-export const InventoryImage = "/src/assets/inventory.png";
-export const AxeleraAILogo = "/src/assets/Axelera-AI-Logo-Horizontal-Black.png";
+export const PersonCountImage = "./person count.png";
+export const RetailAnalyticsImage = "./retail analytics.png";
+export const SecuritySurveillanceImage = "./security_suveillance.png";
+export const InventoryImage = "./inventory.png";
+export const AxeleraAILogo = "./Axelera-AI-Logo-Horizontal-Black.png";
 
 // Icons (if added later)
 // export { default as EyeIcon } from './icons/eye.svg';
