@@ -1,8 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import LogstrikeEvaluationVideo from '../assets/Logstrike evaluation board V3.mp4';
 import RestaurantVideo from '../assets/restaurent.mp4';
 import SupermarketVideo from '../assets/supermarket.mp4';
+import DisasterVideo from '../assets/disaster.mp4';
+import SegmentAnythingVideo from '../assets/segmentanything.mp4';
 
 
 interface VideoCarouselProps {
@@ -25,10 +27,21 @@ const VideoCarousel = ({ className = "" }: VideoCarouselProps) => {
       src: SupermarketVideo,
       title: "Supermarket Intelligence",
       description: "Comprehensive retail analytics solution"
+    },
+    {
+      src: DisasterVideo,
+      title: "Disaster Response",
+      description: "AI-powered disaster assessment and response"
+    },
+    {
+      src: SegmentAnythingVideo,
+      title: "Segment Anything",
+      description: "Advanced computer vision segmentation capabilities"
     }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % videos.length);
@@ -43,11 +56,18 @@ const VideoCarousel = ({ className = "" }: VideoCarouselProps) => {
   };
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      nextSlide();
-    }, 5000);
-
-    return () => clearInterval(timer);
+    // Reset all videos to beginning when slide changes
+    videoRefs.current.forEach((video, index) => {
+      if (video) {
+        if (index === currentIndex) {
+          video.currentTime = 0;
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+          video.currentTime = 0;
+        }
+      }
+    });
   }, [currentIndex]);
 
   return (
@@ -77,11 +97,13 @@ const VideoCarousel = ({ className = "" }: VideoCarouselProps) => {
               }`}
             >
               <video
+                ref={(el) => {
+                  videoRefs.current[index] = el;
+                }}
                 src={video.src}
-                autoPlay
                 muted
-                loop
                 playsInline
+                onEnded={nextSlide}
                 className="w-full h-full object-cover"
               />
             </div>

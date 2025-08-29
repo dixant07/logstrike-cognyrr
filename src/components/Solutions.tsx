@@ -83,7 +83,7 @@ const Solutions = () => {
         <div className="mt-20 p-8 bg-gradient-subtle rounded-2xl border border-border">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold text-primary mb-2">50+</div>
+              <div className="text-3xl font-bold text-primary mb-2">3+</div>
               <div className="text-muted-foreground">Active Deployments</div>
             </div>
             <div>
